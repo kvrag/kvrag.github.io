@@ -98,3 +98,8 @@ h3 {
 .intro {
     font-size: 1.2em;
 }
+
+#resume-thumb {
+    width: 300px;
+    border: 1px dotted #BABA00;
+}
