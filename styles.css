@@ -54,16 +54,21 @@ nav {
   color: #000;
 }
 
-.link {
+a {
   text-decoration: none; 
   color: #BABA00;
-  text-transform: uppercase;
+  font-weight: bold;
+  /* text-transform: uppercase; */
+}
+
+.accent {
+    color: #19647E;
 }
 
 h1 {
     font-family: 'Bebas Neue', 'Arial Narrow', sans-serif;
     letter-spacing: 2px;
-    font-size: 2.5em;
+    font-size: 4em;
 }
 
 h2 {
@@ -83,4 +88,13 @@ h3 {
   padding-top: 100px;
   width: 80%;
   margin: 0 auto;
+}
+
+.inner {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.intro {
+    font-size: 1.2em;
 }
