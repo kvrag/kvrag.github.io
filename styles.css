@@ -95,6 +95,14 @@ h3 {
     margin: 0 auto;
 }
 
+p {
+    line-height: 1.3em;
+}
+
+.list {
+    line-height: 1.5em;
+}
+
 .intro {
     font-size: 1.2em;
 }
