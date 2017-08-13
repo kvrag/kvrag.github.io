@@ -9,7 +9,7 @@ header {
   position: fixed;
   top: 10px;
   left: 0px;
-  padding-left: 10px;
+  padding-left: 15px;
   width: 100%;
   z-index: 3;
   vertical-align: middle;
@@ -39,9 +39,9 @@ nav {
 }
 
 .nav-link {
-  /* font-size: 1.2em; */
+  font-size: 1.2em; 
   color: #FFF;
-  font-weight: bold;
+  font-weight: semibold;
   text-decoration: none;
   /* text-transform: uppercase; */
 }
@@ -59,16 +59,19 @@ nav {
 h1 {
     font-family: 'Bebas Neue', 'Arial Narrow', sans-serif;
     letter-spacing: 2px;
+    font-size: 2.5em;
 }
 
 h2 {
     font-family: 'Bebas Neue', 'Arial Narrow', sans-serif;
     letter-spacing: 1px;
+    font-size: 2em;
 }
 
 h3 {
     font-family: 'Source Sans Pro', helvetica, sans-serif;
     font-weight: bold;
+    font-size: 1.5em;
     color: #509696;
 }
 
