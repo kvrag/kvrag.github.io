@@ -1,0 +1,31 @@
+@font-face { font-family: 'Bebas Neue'; src: url('BebasNeue.otf'); }
+
+body {
+    font-family: 'Source Sans Pro', helvetica, sans-serif;
+}
+
+header {
+    background: #509696;
+}
+
+nav {
+    font-family: 'Source Sans Pro', helvetica, sans-serif;
+    font-weight: bold;
+    color: #fff;
+}
+
+h1 {
+    font-family: 'Bebas Neue', 'Arial Narrow', sans-serif;
+    letter-spacing: 2px;
+}
+
+h2 {
+    font-family: 'Bebas Neue', 'Arial Narrow', sans-serif;
+    letter-spacing: 1px;
+}
+
+h3 {
+    font-family: 'Source Sans Pro', helvetica, sans-serif;
+    font-weight: bold;
+    color: #509696;
+}
