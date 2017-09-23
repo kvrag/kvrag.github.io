@@ -1,14 +1,20 @@
 @font-face { font-family: 'Bebas Neue'; src: url('BebasNeue.otf'); }
 
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 body {
-    font-family: 'Source Sans Pro', helvetica, sans-serif;
-    font-size: 1em;
+  font-family: 'Source Sans Pro', helvetica, sans-serif;
+  font-size: 1em;
 }
 
 header {
   background-color: #509696;
   position: fixed;
-  top: 10px;
+  top: 0px;
   left: 0px;
   padding-left: 15px;
   width: 100%;
@@ -16,17 +22,19 @@ header {
   vertical-align: middle;
 }
 
+
+/* --------------------- NAVBAR ------------------- */
+
 nav {
-    font-family: 'Source Sans Pro', helvetica, sans-serif;
-    font-weight: bold;
-    color: #FFF;
-    position: fixed;
-    top: 10px;
-    right: 0px;
-    width: 100%;
-    text-align: right;
-    z-index: 0;
-    vertical-align: middle;
+  font-family: 'Source Sans Pro', helvetica, sans-serif;
+  font-weight: bold;
+  color: #FFF;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  width: 100%;
+  z-index: 0;
+  vertical-align: middle;
 }
 
 #navbar {
@@ -38,21 +46,59 @@ nav {
 
 .nav-item {
   display: inline-block;
-  padding: 15px 10px 5px 10px;
   vertical-align: middle;
 }
 
 .nav-link {
-  font-size: 1.2em; 
   color: #FFF;
   font-weight: semibold;
   text-decoration: none;
-  /* text-transform: uppercase; */
 }
 
 .nav-item > a:hover {
   color: #000;
 }
+
+
+/* -------- MEDIA QUERIES --------- */
+
+  @media screen and (min-width:635px) {
+    nav {
+      text-align: right;
+    }
+
+    .nav-item {
+      padding: 15px 10px 5px 10px;
+    }
+
+    .nav-link {
+      font-size: 1.2em;
+    }
+  }
+
+  @media screen and (max-width:634px) {
+    nav {
+      text-align: left;
+    }
+
+    #navbar {
+      margin-top: 60px;
+      padding-left: 10px;
+      padding-bottom: 10px;
+      background-color: #509696;
+    }
+
+    .nav-item {
+      padding: 10px 5px 5px 5px;
+    }
+
+    .nav-link {
+      font-size: 1em;
+    }
+  }
+
+/* ------------------------------------------------ */
+
 
 a {
   text-decoration: none; 
@@ -62,26 +108,27 @@ a {
 }
 
 .accent {
-    color: #19647E;
+  color: #19647E;
+  font-weight: normal;
 }
 
 h1 {
-    font-family: 'Bebas Neue', 'Arial Narrow', sans-serif;
-    letter-spacing: 2px;
-    font-size: 4em;
+  font-family: 'Bebas Neue', 'Arial Narrow', sans-serif;
+  letter-spacing: 2px;
+  font-size: 4em;
 }
 
 h2 {
-    font-family: 'Bebas Neue', 'Arial Narrow', sans-serif;
-    letter-spacing: 1px;
-    font-size: 2em;
+  font-family: 'Bebas Neue', 'Arial Narrow', sans-serif;
+  letter-spacing: 1px;
+  font-size: 2em;
 }
 
 h3 {
-    font-family: 'Source Sans Pro', helvetica, sans-serif;
-    font-weight: bold;
-    font-size: 1.5em;
-    color: #509696;
+  font-family: 'Source Sans Pro', helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 1.5em;
+  color: #509696;
 }
 
 .container {
@@ -91,23 +138,36 @@ h3 {
 }
 
 .inner {
-    width: 90%;
-    margin: 0 auto;
+  width: 90%;
+  margin: 0 auto;
 }
 
 p {
-    line-height: 1.3em;
+  line-height: 1.3em;
 }
 
+
+/* -------- MEDIA QUERIES --------- */
+
+  @media screen and (max-width:634px) {
+    .list {
+      padding-left: 20px;
+    }
+  }
+
 .list {
-    line-height: 1.5em;
+  line-height: 1.5em;
+}
+
+ul.list li {
+  margin-bottom: 15px;
 }
 
 .intro {
-    font-size: 1.2em;
+  font-size: 1.2em;
 }
 
 .resume-thumb {
-    width: 300px;
-    border: 1px dotted #BABA00;
+  width: 300px;
+  border: 1px dotted #BABA00;
 }
