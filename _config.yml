@@ -1,6 +1,6 @@
 plugins:
-   - jekyll/tagging
-   - jekyll/paginate
+  - jekyll/tagging
+  - jekyll/paginate
 tag_page_layout: tag_page
 tag_page_dir: tag
 tag_page_data:
@@ -10,7 +10,6 @@ paginate_path: "/blog/page-:num/"
 
 # Build settings
 encoding: utf-8
-
 
 markdown: kramdown
 
