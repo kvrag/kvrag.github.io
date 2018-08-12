@@ -1,2 +1,3 @@
 # kvrag.github.io
-Personal website
+
+Built with Github Pages and Jekyll.
