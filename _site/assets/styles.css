@@ -300,6 +300,8 @@ ul.list li {
 }
 
 .resume-thumb {
-  width: 300px;
   border: 1px dotted #BABA00;
+  height: auto;
+  width: 300px;
+  margin-bottom: 40px;
 }
