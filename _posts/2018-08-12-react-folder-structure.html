@@ -1,0 +1,99 @@
+---
+layout: post
+title: Bringing Rails Convention to the Wild&nbsp;West of&nbsp;JS
+tags:
+- coding
+- react
+- react native
+---
+
+<p>
+  Necessity is the mother of invention&nbsp;&mdash; but Rails is the mother of convention. And sometimes, what you really need is some structure.
+</p>
+
+<p>
+  I work for a development consultancy that has branched into mobile in a big way, using React Native with Rails APIs. As a consultancy, we have the unique perspective of building projects from scratch often, and we kept coming back to folder structure. Namely, how on earth does anyone find anything in a React Native (or React.js) app as it grows?
+</p>
+
+<p>
+  Most of the React tutorials we saw out there had three main folders for their files: elements, modules, and components. (Redux projects will sometimes expand that to include an actions folder.) But try getting someone to actually define what an element is, versus a module, versus a component, and the argument quickly becomes circular. <em>Elements are reusable,</em> they say. <em>Well, so are modules. Modules are bigger, though. Sort of.</em>
+</p>
+
+<p>
+  So we decided to write our own rulebook. Trash it if you like, but it’s worked pretty well for us so far, and going back to maintain projects we built before we established this style? The difference is mind-boggling.
+</p>
+
+<pre>
+  <code>
+    |_ __tests__
+      |_ <em>...mirrors the src folder</em>
+    |_ android
+    |_ assets
+    |_ ios
+    |_ src
+      |_ actions
+      |_ <strong>contexts</strong>
+      |_ elements
+      |_ helpers
+      |_ <strong>layouts</strong>
+      |_ <strong>navigators</strong>
+      |_ utils
+    App.js
+    index.js
+  </code>
+</pre>
+
+<h4>
+  Putting it into contexts
+</h4>
+
+<p>
+  If you’re building any kind of mildly robust mobile application that makes requests to an API, you probably have several "flows" through the app. Settings. Login. Feed. Profile. Onboarding. Any "section" of the app that you’ve probably already chunked out as a feature set is probably also a <em>context.</em> We decided to create a folder for each of these contexts, with all the views in that context along with all of the modules/elements that are particular to that context.
+  <sup><a href="#footnote">[1]</a></sup>
+</p>
+
+<p>
+  For example, a public profile view, an editable profile view, and an avatar uploading module would all be in a Profile context folder. If an element is reusable outside of that component, stick it in the elements folder instead. The contexts folder was the real heavy-hitter in our redesign. You’re welcome.
+</p>
+
+<h4>
+  Let me lay it out for you
+</h4>
+
+<p>
+  Most of the apps we create have custom navigation bars/drawers or <code>SafeArea</code> wrappers that need to go on every page. We usually call this a <code>ViewWrap.js</code> or <code>TopNav.js</code>, whatever the use case is. Sometimes different kinds of views have different view wraps. The layouts folder is for these&nbsp;&mdash; just like in Rails.
+</p>
+
+<h4>
+  Check the GPS
+</h4>
+
+<p>
+  The navigators folder is a handy place for all your navigation-related files.
+</p>
+
+<p>
+  If you’re familiar with navigation libraries for react like React Navigation, you know that each app "flow" needs a navigator file or something like it. We used to keep these in the junk pile, AKA the top level of the folder structure along with <code>App.js</code> and <code>index.js</code>. But for complex apps with lots of form flows, or different user journeys, having a navigators folder&nbsp;&mdash; with subfolders like Admin or Onboarding or other, more specific navigational needs&nbsp;&mdash; makes it a lot easier to grok the app’s navigational complexities.
+</p>
+
+<h4>
+  Going off the Rails
+</h4>
+
+<p>
+  As a software consultancy, we have a particular interest in making sure that our code is easy to read and maintain by another team sometime down the line. But let’s be honest&nbsp;&mdash; we’ve all read a codebase that we wish had been written with future developers in mind.
+</p>
+
+<p>
+  Going back to old projects, ones built before we adopted this new folder structure, isn’t a total nightmare (we have always been pretty good at this readability stuff, after all). But it truly is amazing how much of a difference the new structure has made. No longer do I have to wonder which Events folder is going to have <code>EventCard.js</code> in it&nbsp;&mdash; <code>src/elements/EventCard.js</code> or <code>src/modules/EventCard.js</code>?. There’s only one Events folder, <code>src/contexts/Events</code>. Something reusable like a card will maybe be another folder deep, in a <code>modules</code> folder particular to events. But that’s it. No more digging!
+</p>
+
+<p>
+  Even if you decide not to implement our folder structure for your next React or React Native project, what I hope you’ll take away from this success story is that it’s invaluable to consider lessons you’ve learned from other frameworks. What makes Rails infinitely easy to jump into and know where to look for things is totally doable in React. So get after it!
+</p>
+
+<section class="footnote">
+  <a name="footnote">[1]</a>
+  
+  We did not know that React 16.4.2 was about to come out with this <a href="https://reactjs.org/docs/context.html">Context</a> thing. Sorry for any confusion. Call the <code>contexts</code> folder whatever you want?
+</section>
