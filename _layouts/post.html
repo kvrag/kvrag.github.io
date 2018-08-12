@@ -2,30 +2,24 @@
 layout: default
 ---
 
-<h1>{{ page.title }}</h1>
-  <div class="inner">
-    <p class="intro">
-      <strong>{{ page.date | date: '%B %d, %Y' }}</strong>
-    </p>
+<h1 class="post-title">{{ page.title }}</h1>
 
-    <article>
-      {{ content }}
-    </article>
+<div class="inner">
+  <p class="blog-meta">
+    <span class="tags">
+      {% for tag in page.tags %}
+      <a href="/tag/{{ tag }}.html">{{ tag }}</a>
+      {% endfor %}
+    </span>
+  </p>
 
-    <!-- <p class="blog-meta">
-      <span class="tags">Tags: {% for tag in page.tags %}
-        <a href="/tag/{{ tag }}.html">{{ tag }}</a>
-        {% endfor %}
-      </span>
-    </p> -->
+  <p class="intro">
+    <strong>
+      {{ page.date | date: '%B %d, %Y' }}
+    </strong>
+  </p>
 
-
-    <!-- <p>
-      <a href="portfolio.html">
-        <i class="fa fa-code fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;Check out my development portfolio.</a>
-    </p>
-    <p>
-      <a href="resume.html">&nbsp;
-        <i class="fa fa-file-pdf-o fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;View or download a copy of my&nbsp;resume.</a>
-    </p> -->
+  <article>
+    {{ content }}
+  </article>
 </div>
