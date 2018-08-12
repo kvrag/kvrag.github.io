@@ -268,6 +268,23 @@ pre {
     .list {
       padding-left: 20px;
     }
+
+    blockquote {
+      width: 100%;
+    }
+
+    pre {
+      width: 100%;
+    }
+
+    .post-title {
+      width: 80%;
+    }
+
+    h1 {
+      font-size: 2em;
+      letter-spacing: 1px;
+    }
   }
 
 .list {
