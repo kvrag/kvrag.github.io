@@ -1,0 +1,288 @@
+@font-face { font-family: 'Bebas Neue'; src: url('/assets/BebasNeue.otf'); }
+
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Source Sans Pro', helvetica, sans-serif;
+  font-size: 1em;
+}
+
+header {
+  background-color: #509696;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  padding-left: 15px;
+  width: 100%;
+  z-index: 3;
+  vertical-align: middle;
+}
+
+/* --------------------- NAVBAR ------------------- */
+
+nav {
+  font-family: 'Source Sans Pro', helvetica, sans-serif;
+  font-weight: bold;
+  color: #FFF;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  width: 100%;
+  z-index: 0;
+  vertical-align: middle;
+}
+
+#navbar {
+  list-style: none;
+  padding-left: 0px;
+  padding-right: 5px;
+  vertical-align: middle;
+}
+
+.nav-item {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.nav-link {
+  color: #FFF;
+  font-weight: semibold;
+  text-decoration: none;
+}
+
+.nav-item > a:hover {
+  color: #000;
+}
+
+
+/* -------- NAVBAR MEDIA QUERIES --------- */
+
+  @media screen and (min-width:635px) {
+    nav {
+      text-align: right;
+    }
+
+    .nav-item {
+      padding: 15px 10px 5px 10px;
+    }
+
+    .nav-link {
+      font-size: 1.2em;
+    }
+  }
+
+  @media screen and (max-width:634px) {
+    nav {
+      text-align: left;
+    }
+
+    #navbar {
+      margin-top: 60px;
+      padding-left: 10px;
+      padding-bottom: 10px;
+      background-color: #509696;
+    }
+
+    .nav-item {
+      padding: 10px 5px 5px 5px;
+    }
+
+    .nav-link {
+      font-size: 1em;
+    }
+  }
+
+
+
+/* --------------TYPOGRAPHY------------------------ */
+
+a {
+  text-decoration: none;
+  color: #BABA00;
+  font-weight: bold;
+  /* text-transform: uppercase; */
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+.accent {
+  color: #19647E;
+  font-weight: normal;
+}
+
+h1 {
+  font-family: 'Bebas Neue', 'Arial Narrow', sans-serif;
+  letter-spacing: 2px;
+  font-size: 4em;
+}
+
+h2 {
+  font-family: 'Bebas Neue', 'Arial Narrow', sans-serif;
+  letter-spacing: 1px;
+  font-size: 2em;
+}
+
+h3 {
+  font-family: 'Source Sans Pro', helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 1.5em;
+  color: #509696;
+}
+
+h4 {
+  font-family: 'Source Sans Pro', helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+
+/* --------------LAYOUT--------------------------- */
+
+.container {
+  padding-top: 100px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.inner {
+  width: 90%;
+  margin: 0 auto;
+}
+
+p {
+  line-height: 1.3em;
+}
+
+/* ------------- BLOG ---------------------------- */
+
+article {
+  padding-bottom: 40px;
+}
+
+article > p {
+  line-height: 1.7em;
+}
+
+blockquote {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  quotes: "\201C""\201D""\2018""\2019";
+  margin: 0 auto;
+  width: 70%;
+}
+
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-family: 'Bebas Neue', 'Arial Narrow', sans-serif;
+  font-size: 6em;
+  line-height: 0.1em;
+  margin-right: 0.1em;
+  vertical-align: -0.4em;
+}
+
+blockquote p {
+  color: #ccc;
+  display: inline;
+  font-family: 'Bebas Neue', 'Arial Narrow', sans-serif;
+  font-size: 2em;
+  font-weight: normal;
+  letter-spacing: 1px;
+}
+
+code {
+  background-color: #eee;
+  padding: 2px 3px;
+}
+
+pre {
+  background-color: #eee;
+  line-height: 1.8em;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 80%;
+}
+
+.blog-meta {
+  font-weight: bold;
+}
+
+.blog-posts {
+  padding-bottom: 40px;
+}
+
+.blog-post {
+  /* border-bottom: 1px solid #509696; */
+  padding-bottom: 40px;
+  width: 100%;
+}
+
+.footnote {
+  font-style: italic;
+  padding: 30px;
+}
+
+.pagination {
+  padding-bottom: 40px;
+  text-align: center;
+  width: 100%;
+}
+
+.post-excerpt > p {
+  line-height: 1.7em;
+}
+
+.post-title {
+  width: 80%;
+}
+
+.post-title > a {
+  color: #000;
+}
+
+.post-title > a:hover {
+  color: #509696;
+}
+
+.tags > a {
+  color: #509696;
+  font-family: 'Bebas Neue', 'Arial Narrow', sans-serif;
+  font-weight: normal;
+  letter-spacing: 1px;
+  padding: 0 5px 0 0;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+
+/* -------- MEDIA QUERIES --------- */
+
+  @media screen and (max-width:634px) {
+    .list {
+      padding-left: 20px;
+    }
+  }
+
+.list {
+  line-height: 1.5em;
+}
+
+ul.list li {
+  margin-bottom: 15px;
+}
+
+.intro {
+  font-size: 1.2em;
+}
+
+.resume-thumb {
+  width: 300px;
+  border: 1px dotted #BABA00;
+}

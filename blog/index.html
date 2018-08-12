@@ -1,0 +1,52 @@
+---
+layout: default
+title: Blog
+pagination:
+  enabled: true
+---
+
+<!-- <h1>The Blog</h1> -->
+<div class="inner">
+  <div class="blog-posts">
+    {% for post in paginator.posts %}
+      <div class="blog-post">
+        <h2 class="post-title">
+          <a href="{{ post.url | prepend: site.baseurl }}">
+            {{ post.title }}
+          </a>
+        </h2>
+
+        <p class="blog-meta">
+          <span class="tags">
+            {% for tag in post.tags %}
+            <a href="/tag/{{ tag }}.html">{{ tag }}</a>
+            {% endfor %}
+          </span>
+        </p>
+
+        <p class="blog-meta">
+          <span class="blog-date">
+            {{ post.date | date: '%B %d, %Y' }}
+          </span>
+        </p>
+
+        <span class="post-excerpt">
+          {{ post.excerpt }}
+          <a href="{{ post.url }}">Read More</a>
+        </span>
+      </div>
+    {% endfor %}
+  </div>
+    
+  <div class="pagination">
+    {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path }}" class="previous">&laquo; Prev</a>
+    {% endif %}
+    
+    <span class="page_number">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+    
+    {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path }}" class="next">Next &raquo;</a>
+    {% endif %}
+  </div>
+</div>

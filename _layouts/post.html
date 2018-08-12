@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+<h1 class="post-title">{{ page.title }}</h1>
+
+<div class="inner">
+  <p class="blog-meta">
+    <span class="tags">
+      {% for tag in page.tags %}
+      <a href="/tag/{{ tag }}.html">{{ tag }}</a>
+      {% endfor %}
+    </span>
+  </p>
+
+  <p class="intro">
+    <strong>
+      {{ page.date | date: '%B %d, %Y' }}
+    </strong>
+  </p>
+
+  <article>
+    {{ content }}
+  </article>
+</div>
