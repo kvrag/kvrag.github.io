@@ -2,9 +2,18 @@
 layout: default
 ---
 
+{% assign tags = site.tags | sort %}
+
 <h1>Tags</h1>
 <div class="inner">
-  <div id="tag-cloud">
-    {{ site | tag_cloud }}
-  </div>
+  <span class="tags tag-list">
+    {% for tag_item in tags %}
+      {% assign tag = (tag_item | first) %}
+      <a href="/tag/{{ tag }}">
+        {{ site.data.tags[tag].name }}
+      </a>
+      ({{ site.tags[tag].size }})
+      <br>
+    {% endfor %}
+  </span>
 </div>
