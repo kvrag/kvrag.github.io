@@ -11,6 +11,13 @@ body {
   font-size: 1em;
 }
 
+footer {
+  margin: 0 auto;
+  padding: 20px 0 40px 0;
+  text-align: center;
+  width: 60%;
+}
+
 header {
   background-color: #509696;
   position: fixed;
@@ -230,7 +237,6 @@ pre {
 }
 
 .pagination {
-  padding-bottom: 40px;
   text-align: center;
   width: 100%;
 }
@@ -249,6 +255,11 @@ pre {
 
 .post-title > a:hover {
   color: #509696;
+}
+
+.tag-list > a {
+  font-size: 1.3em;
+  line-height: 1.5em;
 }
 
 .tags > a {

@@ -8,7 +8,7 @@ layout: default
   <p class="blog-meta">
     <span class="tags">
       {% for tag in page.tags %}
-      <a href="/tag/{{ tag }}.html">{{ tag }}</a>
+      <a href="/tag/{{ tag }}.html">{{ tag | replace: "-", " " }}</a>
       {% endfor %}
     </span>
   </p>
