@@ -236,6 +236,24 @@ pre {
   padding: 30px;
 }
 
+.long-quote {
+  background-color: #f4f4f4;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 30px;
+  width: 80%;
+}
+
+.long-quote > p {
+  line-height: 1.7em;
+}
+
+ol > li {
+  line-height: 1.7em;
+  padding-bottom: 15px;
+}
+
 .pagination {
   text-align: center;
   width: 100%;
@@ -285,6 +303,10 @@ pre {
     }
 
     pre {
+      width: 100%;
+    }
+
+    .long-quote {
       width: 100%;
     }
 
