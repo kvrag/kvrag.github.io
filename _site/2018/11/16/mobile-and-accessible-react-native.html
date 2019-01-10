@@ -1,0 +1,127 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://use.fontawesome.com/016cc8e025.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/assets/styles.css">
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+
+    <title>Mobile and Accessible&#58; React Native for Everyone</title>
+  </head>
+
+  <body>
+    <header>
+      <h2>Kristina Vragovic</h2>
+      <nav>
+        <ul id="navbar">
+          <li class="nav-item">
+            <a href="/index.html" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="/blog/index.html" class="nav-link">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resume.html" class="nav-link">Resume</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a href="/portfolio.html" class="nav-link">Portfolio</a>
+          </li> -->
+          <li class="nav-item">
+            <a href="http://www.github.com/kvrag" class="nav-link">
+              <i class="fa fa-github fa-lg" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="http://www.linkedin.com/in/kvragovic" class="nav-link">
+              <i class="fa fa-linkedin-square fa-lg" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="http://www.twitter.com/kvrag" class="nav-link">
+              <i class="fa fa-twitter fa-lg" aria-hidden="true"></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="container">
+      <h1 class="post-title">Mobile and Accessible&#58; React Native for Everyone</h1>
+
+<div class="inner">
+  <p class="blog-meta">
+    <span class="tags">
+      
+      <a href="/tag/react-native.html">react native</a>
+      
+      <a href="/tag/accessibility.html">accessibility</a>
+      
+      <a href="/tag/coding.html">coding</a>
+      
+    </span>
+  </p>
+
+  <p class="intro">
+    <strong>
+      November 16, 2018
+    </strong>
+  </p>
+
+  <article>
+    <p>Recently in a meeting at my company, we were doing a retrospective&nbsp;&mdash; you know, the kind where you write "Start," "Stop," and "Keep" up on a board and everyone offers their thoughts on how we can improve moving forward. I raised my hand and asked, "Have we talked about accessibility lately?"</p>
+
+<p>I quasi-knew the answer. We were so set on getting a prototypical version of our app out there in front of clients and the public that we hadn't focused on that particular detail, despite our mission being to make healthcare more accessible and understandable for <em>everyone</em>. The good news is, it landed in the "Start" column, and we set up a meeting with our architect, front-end devs, and designer to talk through accessibility guidelines and what it would take to make our React Native app more accessible.</p>
+
+<p>Here's what I learned.</p>
+
+<p>React Native's <a href="https://facebook.github.io/react-native/docs/accessibility">documentation</a> is pretty good on this point! Essentially, the main thing (besides the guidelines for web accessibility, which still apply to mobile&nbsp;&mdash; think color contrast and other visual concerns) is making sure UI elements are exposed to native screen readers, which include VoiceOver for iOS and TalkBack on Android. This can be as easy as adding <code>accessibility={true}</code> as a prop on a component, and also adding an <code>accessibilityLabel</code>. That label is what will be read aloud when a user focuses on the element.</p>
+
+<pre>
+  <code>
+    render() {
+      return (
+        &lt;View
+          accessible={true} // fun fact: you don't need the "={true}" here!
+          accessibilityLabel="Benefits information section"
+        &gt;
+          &lt;Text&gt;Plan information for 2018&lt;/Text&gt;
+          &lt;Text&gt;More info here&lt;/Text&gt;
+        &lt;/View&gt;
+      )
+    }
+  </code>
+</pre>
+
+<p>What's really nice about this structure is that all those <code>&lt;Text&gt;</code> elements will also have their accessibility prop set to true, because they are nested inside an accessible component.</p>
+
+<p>Another nifty feature is <code>accessibilityHint</code>. This prop is pretty self-explanatory; it provides a hint that will be read aloud after the label, which can be useful for touchable elements. You can alert the user as to what action will occur if they touch that element.</p>
+
+<pre>
+  <code>
+    render() {
+      return (
+        &lt;TouchableOpacity
+          accessible
+          accessibilityLabel="Benefits information"
+          accessibilityHint="Navigates to screen with benefits information"
+          accessibilityRole="link"
+        &gt;
+          &lt;Text&gt;Plan info for 2018&lt;/Text&gt;
+        &lt;/TouchableOpacity&gt;
+      )
+    }
+  </code>
+</pre>
+
+<p>You'll notice I also included the <code>accessibilityRole</code> in this example, which tells the screen reader tool what kind of element you're presenting. Other examples include <code>button</code>, <code>search</code>, <code>image</code>, and <code>header</code>. Any clues you can give the screen reader about your content will help it to better interpret and present your app to the user. It can be super revealing to turn on VoiceOver on your iPhone and experience firsthand how it navigates your favorite apps!</p>
+
+<p>There are plenty of other features specific to iOS or Android, and you can check them all out in the <a href="https://facebook.github.io/react-native/docs/accessibility">documentation</a>. I definitely found it to be a useful starting point for making our app more usable for everyone.</p>
+  </article>
+</div>
+
+    </div>
+  </body>
+
+</html>
