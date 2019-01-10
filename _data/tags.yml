@@ -8,3 +8,7 @@ blog:
   name: Blog
 general:
   name: General
+personal-growth:
+  name: Personal Growth
+accessibility:
+  name: Accessibility
