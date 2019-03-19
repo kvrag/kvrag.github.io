@@ -1,7 +1,7 @@
 #!/bin/bash -x
 
 # first, run: bundle exec jekyll serve
-# then run this file
+# then run this file with ./move_tags.sh
 
 rm -rf tag
 mkdir tag
