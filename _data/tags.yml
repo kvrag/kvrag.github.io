@@ -1,5 +1,5 @@
 react-native:
-  name: React Native
+  name: React&nbsp;Native
 react:
   name: React
 coding:
@@ -9,6 +9,8 @@ blog:
 general:
   name: General
 personal-growth:
-  name: Personal Growth
+  name: Personal&nbsp;Growth
 accessibility:
   name: Accessibility
+ruby:
+  name: Ruby

@@ -38,14 +38,14 @@ pagination:
       </div>
     {% endfor %}
   </div>
-    
+
   <section class="pagination">
     {% if paginator.previous_page %}
     <a href="{{ paginator.previous_page_path }}" class="previous">&laquo; Prev</a>
     {% endif %}
-    
+
     <span class="page_number">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
-    
+
     {% if paginator.next_page %}
     <a href="{{ paginator.next_page_path }}" class="next">Next &raquo;</a>
     {% endif %}
@@ -53,7 +53,6 @@ pagination:
 
   <footer class="tags">
     {% assign tags = site.tags | sort %} {% for tag_item in tags %} {% assign tag = (tag_item | first) %}
-    <a href="/tag/{{ tag }}">{{ site.data.tags[tag].name }}</a>
-    ({{ site.tags[tag].size }}) &nbsp;&nbsp; {% endfor %}
+    <a href="/tag/{{ tag }}">{{ site.data.tags[tag].name }}</a>&nbsp;({{ site.tags[tag].size }}) &nbsp;&nbsp; {% endfor %}
   </footer>
 </div>
